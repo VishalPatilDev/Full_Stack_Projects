@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy Project &apos;warehouse-inventory-tracker&apos;" description="Copy Project &apos;warehouse-inventory-tracker&apos;" destination="D:/FullStack_Projects" element="/warehouse-inventory-tracker" flags="7" id="org.eclipse.ltk.core.refactoring.copyproject.resource" name="e-commerce" stamp="1764392372511"/>
+</session>

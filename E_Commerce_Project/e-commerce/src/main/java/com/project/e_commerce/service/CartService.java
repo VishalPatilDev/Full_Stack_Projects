@@ -1,0 +1,20 @@
+package com.project.e_commerce.service;
+
+import java.util.List;
+
+import com.project.e_commerce.dto.CartItemReqDto;
+import com.project.e_commerce.dto.CartItemResDto;
+import com.project.e_commerce.entity.Cart;
+import com.project.e_commerce.entity.CartItem;
+
+public interface CartService {
+
+	CartItem addProductToCart(CartItemReqDto dto,String username);
+
+	List<CartItemResDto> getCartItems(String username);
+
+	CartItem updateQuantity(Long id, int quantity);
+
+	void deleteProductFromCart(Long id);
+
+}

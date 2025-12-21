@@ -1,0 +1,62 @@
+package com.project.e_commerce.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.e_commerce.dto.CartItemReqDto;
+import com.project.e_commerce.dto.CartItemResDto;
+import com.project.e_commerce.entity.Cart;
+import com.project.e_commerce.entity.CartItem;
+import com.project.e_commerce.entity.Product;
+import com.project.e_commerce.repository.CartItemRepository;
+import com.project.e_commerce.repository.CartRepository;
+import com.project.e_commerce.repository.ProductRepository;
+
+@Service
+public class CartServiceImpl implements CartService {
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+    private CartRepository cartRepository;
+
+    @Autowired
+    private CartItemRepository cartItemRepository;
+
+	@Override
+	public CartItem addProductToCart(CartItemReqDto dto) {
+		// fetch product by ID
+        Product product = productRepository.findById(dto.getProductId())
+            .orElseThrow(() -> new RuntimeException("Product not found"));
+
+        // get cart (for now single cart or user cart)
+        Cart cart = cartRepository.findById(1L)   // demo cart
+            .orElseGet(() -> cartRepository.save(new Cart()));
+
+        // create item
+        CartItem item = CartItem.builder()
+                .product(product)
+                .quantity(dto.getQuantity())
+                .cart(cart)
+                .build();
+
+        return cartItemRepository.save(item);
+	}
+
+	@Override
+	public List<CartItemResDto> getCartItems() {
+		List<CartItem> items = cartItemRepository.findAll();
+
+	    return items.stream().map(item -> new CartItemResDto(
+	        item.getProduct().getId(),
+	        item.getProduct().getProductName(),
+	        item.getProduct().getProductDescription(),
+	        item.getProduct().getProductPrice(),
+	        item.getProduct().getProductImage(),
+	        item.getQuantity()
+	    )).toList();
+	}
+
+}

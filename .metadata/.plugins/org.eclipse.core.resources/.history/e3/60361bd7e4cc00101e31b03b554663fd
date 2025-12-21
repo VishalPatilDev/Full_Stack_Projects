@@ -1,0 +1,20 @@
+package com.project.e_commerce.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.e_commerce.entity.Product;
+import com.project.e_commerce.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+	@Autowired
+	ProductRepository repo;
+	
+	@Override
+	public Product addProduct(Product p) {
+		repo.save(p);
+		return p;
+	}
+
+}

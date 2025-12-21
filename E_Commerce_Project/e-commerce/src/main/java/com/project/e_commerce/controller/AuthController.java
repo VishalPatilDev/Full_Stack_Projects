@@ -1,0 +1,52 @@
+package com.project.e_commerce.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project.e_commerce.config.JwtUtil;
+import com.project.e_commerce.dto.LoginDto;
+import com.project.e_commerce.dto.SignInDto;
+import com.project.e_commerce.service.UserService;
+
+@RestController
+@RequestMapping("/e-commerce/auth")
+//@CrossOrigin(origins = "http://localhost:5173")
+
+public class AuthController {
+	
+	@Autowired	
+	private UserService userService;
+	
+	@Autowired
+	private JwtUtil jwtUtil;
+	
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
+	@PostMapping("/signup")
+	ResponseEntity<?> signup(@RequestBody SignInDto dto){
+		return ResponseEntity.ok(userService.signup(dto));
+	}
+	
+	@PostMapping("/login")
+	ResponseEntity<?> login(@RequestBody LoginDto dto){
+		try {
+			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword()));
+			String token = jwtUtil.generateToken(dto.getUsername());
+			return ResponseEntity.ok(token);
+		}catch(Exception e) {
+			return ResponseEntity.badRequest().body("Invalid username or password");
+		}
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.project.e_commerce.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project.e_commerce.entity.Product;
+
+@RestController
+public class ProductController {
+	@PostMapping("/")
+	ResponseEntity<?> addProduct(Product p ){
+		return ResponseEntity.ok(p);
+	}
+}

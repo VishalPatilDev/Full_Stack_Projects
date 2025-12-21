@@ -1,0 +1,5 @@
+# Created at 2025-10-21T11:13:09.396
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Koorier-ProblemStatement\backend\warehouse-inventory-tracker\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

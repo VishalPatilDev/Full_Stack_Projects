@@ -1,0 +1,15 @@
+package com.project.e_commerce.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class CartItemResDto {
+    private Long productId;
+    private String productName;
+    private String productDescription;
+    private float productPrice;
+    private String productImage;
+    private int quantity;
+}

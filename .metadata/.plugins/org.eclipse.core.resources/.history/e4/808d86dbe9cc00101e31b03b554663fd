@@ -1,0 +1,10 @@
+package com.project.e_commerce.service;
+
+import com.project.e_commerce.dto.ProductReqDto;
+import com.project.e_commerce.dto.ProductResDto;
+import com.project.e_commerce.entity.Product;
+
+public interface ProductService {
+	public ProductResDto addProduct(ProductReqDto p);
+
+}

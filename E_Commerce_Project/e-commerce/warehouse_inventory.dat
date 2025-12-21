@@ -1,0 +1,26 @@
+{
+  "SKU-961bf778" : {
+    "productId" : "SKU-961bf778",
+    "name" : "Keyboard",
+    "quantity" : 6,
+    "reorderThreshold" : 3
+  },
+  "SKU-ab5fafe7" : {
+    "productId" : "SKU-ab5fafe7",
+    "name" : "Keyboard",
+    "quantity" : 6,
+    "reorderThreshold" : 3
+  },
+  "SKU-3e0962a6" : {
+    "productId" : "SKU-3e0962a6",
+    "name" : "Keyboard",
+    "quantity" : 6,
+    "reorderThreshold" : 3
+  },
+  "SKU-814e9e2e" : {
+    "productId" : "SKU-814e9e2e",
+    "name" : "Keyboard",
+    "quantity" : 6,
+    "reorderThreshold" : 3
+  }
+}

@@ -1,0 +1,11 @@
+package com.project.e_commerce.service;
+
+import com.project.e_commerce.dto.CartItemReqDto;
+import com.project.e_commerce.entity.Cart;
+import com.project.e_commerce.entity.CartItem;
+
+public interface CartService {
+
+	CartItem addProductToCart(CartItemReqDto dto);
+
+}

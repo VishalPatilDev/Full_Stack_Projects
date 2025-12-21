@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=e-commerce/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.project.e_commerce.service{ProductService.java[ProductService" modifiers="513" timestamp="1764446094332"/>
+    <typeInfo handle="=e-commerce/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.project.e_commerce.service{CartItemService.java[CartItemService" modifiers="513" timestamp="1764492422600"/>
+    <typeInfo handle="=e-commerce/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.project.e_commerce.service{CartService.java[CartService" modifiers="513" timestamp="1764506467622"/>
+    <typeInfo handle="=e-commerce/C:\/Users\/Vishal Patil\/.m2\/repository\/org\/springframework\/security\/spring-security-core\/6.5.5\/spring-security-core-6.5.5.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.security=/=/maven.artifactId=/spring-security-core=/=/maven.version=/6.5.5=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.security.core.userdetails(UserDetailsService.class[UserDetailsService" modifiers="1537" timestamp="1764518849485"/>
+    <typeInfo handle="=e-commerce/C:\/Users\/Vishal Patil\/.m2\/repository\/org\/springframework\/security\/spring-security-core\/6.5.5\/spring-security-core-6.5.5.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.security=/=/maven.artifactId=/spring-security-core=/=/maven.version=/6.5.5=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.security.provisioning(UserDetailsManager.class[UserDetailsManager" modifiers="1537" timestamp="1764518849485"/>
+</typeInfoHistroy>

@@ -1,0 +1,24 @@
+package com.project.e_commerce.dto;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.persistence.Column;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProductReqDto {
+
+	private String productName;
+	
+
+	private String productDescription;
+	
+
+	private float productPrice;
+	
+	private String productImage;
+}
