@@ -1,6 +1,9 @@
 package com.smart_inventory.management.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,6 +17,9 @@ import java.util.List;
 //
 //Created By:
 //Admin
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PurchaseOrder {
 
     @Id

@@ -1,6 +1,9 @@
 package com.smart_inventory.management.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -9,6 +12,9 @@ import java.util.List;
 //Mumbai Warehouse
 //Pune Warehouse
 //Delhi Warehouse
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Warehouse {
 
     @Id

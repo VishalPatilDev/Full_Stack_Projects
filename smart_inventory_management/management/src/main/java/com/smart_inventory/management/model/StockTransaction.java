@@ -1,6 +1,9 @@
 package com.smart_inventory.management.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -11,6 +14,9 @@ import java.time.LocalDateTime;
 //SALE -2 laptops
 //DAMAGE -1 laptop
 //TRANSFER_OUT -5 laptops
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class StockTransaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

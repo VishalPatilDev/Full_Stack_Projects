@@ -1,6 +1,9 @@
 package com.smart_inventory.management.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "inventories")
@@ -9,6 +12,9 @@ import jakarta.persistence.*;
 //Laptop	Mumbai	50
 //Laptop	Pune	20
 //Laptop	Delhi	30
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Inventory {
 
     @Id

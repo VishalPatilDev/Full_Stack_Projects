@@ -1,6 +1,9 @@
 package com.smart_inventory.management.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "purchase_order_items")
@@ -8,6 +11,9 @@ import jakarta.persistence.*;
 //Laptop 10
 //Mouse 20
 //Keyboard 15
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PurchaseOrderItem {
 
     @Id

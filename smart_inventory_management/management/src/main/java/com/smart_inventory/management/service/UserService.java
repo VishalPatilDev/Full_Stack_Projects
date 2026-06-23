@@ -63,7 +63,7 @@ public class UserService {
         User user = userRepository.findById(id).orElseThrow(()->new UsernameNotFoundException("User not found !"));
         user.setEmail(userRequestDto.getEmail());
         user.setName(userRequestDto.getName());
-        user.setPassword(userRequestDto.getPassword());
+        user.setPassword(passwordEncoder.encode(userRequestDto.getPassword()));
         user.setRole(userRequestDto.getRole());
         userRepository.save(user);
         return UserResponseDto.builder().name(user.getName()).role(user.getRole()).email(user.getEmail()).id(user.getId()).build();

@@ -1,6 +1,8 @@
 package com.smart_inventory.management.global_exception;
 
+import com.smart_inventory.management.custom_exceptions.DuplicateResourceException;
 import com.smart_inventory.management.custom_exceptions.EmailAlreadyExistsException;
+import com.smart_inventory.management.custom_exceptions.ResourceNotFoundException;
 import com.smart_inventory.management.custom_exceptions.UserNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
@@ -62,5 +64,15 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Something went wrong");
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<?> handleResourceNotFound(ResourceNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
+    @ExceptionHandler(DuplicateResourceException.class)
+    public ResponseEntity<?> handleDuplicateResource(DuplicateResourceException e) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
     }
 }
