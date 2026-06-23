@@ -1,7 +1,0 @@
-spring.application.name=e_commerce
-server.port = 8080
-
-
-logging.level.root=INFO
-
-spring.web.resources.add-mappings=false
