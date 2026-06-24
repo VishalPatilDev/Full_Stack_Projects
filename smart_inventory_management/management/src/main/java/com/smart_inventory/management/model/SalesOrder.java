@@ -28,4 +28,8 @@ public class SalesOrder {
 
     @OneToMany(mappedBy = "salesOrder",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<SalesOrderItem> salesOrderItems;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "warehouse_id", nullable = false)
+    private Warehouse warehouse;
 }

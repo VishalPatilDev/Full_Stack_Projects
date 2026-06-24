@@ -1,9 +1,6 @@
 package com.smart_inventory.management.global_exception;
 
-import com.smart_inventory.management.custom_exceptions.DuplicateResourceException;
-import com.smart_inventory.management.custom_exceptions.EmailAlreadyExistsException;
-import com.smart_inventory.management.custom_exceptions.ResourceNotFoundException;
-import com.smart_inventory.management.custom_exceptions.UserNotFoundException;
+import com.smart_inventory.management.custom_exceptions.*;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -75,4 +72,17 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleDuplicateResource(DuplicateResourceException e) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
     }
+
+
+    @ExceptionHandler(InsufficientStockException.class)
+    public ResponseEntity<?> handleInsufficientStock(InsufficientStockException e) {
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(e.getMessage());
+        // 422 Unprocessable Entity — the request was valid JSON but business logic rejected it
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<?> handleIllegalArgument(IllegalArgumentException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
 }
