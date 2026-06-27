@@ -3,10 +3,13 @@ package com.smart_inventory.management.service;
 import com.smart_inventory.management.custom_exceptions.EmailAlreadyExistsException;
 import com.smart_inventory.management.dto.UserRequestDto;
 import com.smart_inventory.management.dto.UserResponseDto;
+import com.smart_inventory.management.events.UserRegisterEvent;
+//import com.smart_inventory.management.listeners.EmailEventListener;
 import com.smart_inventory.management.model.User;
 import com.smart_inventory.management.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,6 +20,8 @@ import java.util.stream.Collectors;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ApplicationEventPublisher applicationEventPublisher;
 
 
 
@@ -33,6 +38,7 @@ public class UserService {
                 .email(userRequestDto.getEmail())
                 .role(userRequestDto.getRole()).build();
         userRepository.save(user);
+//        applicationEventPublisher.publishEvent(new UserRegisterEvent(user));
         return UserResponseDto.builder()
                 .id(user.getId())
                 .name(user.getName())

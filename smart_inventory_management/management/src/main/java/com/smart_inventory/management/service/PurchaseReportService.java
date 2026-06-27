@@ -1,9 +1,9 @@
 package com.smart_inventory.management.service;
 
 
-import com.smart_inventory.management.dto.response.PurchaseReportItemDto;
-import com.smart_inventory.management.dto.response.PurchaseReportSummaryDto;
-import com.smart_inventory.management.dto.response.TopProductDto;
+import com.smart_inventory.management.dto.PurchaseReportItemDto;
+import com.smart_inventory.management.dto.PurchaseReportSummaryDto;
+import com.smart_inventory.management.dto.TopProductDto;
 import com.smart_inventory.management.model.PurchaseOrderItem;
 import com.smart_inventory.management.repository.PurchaseOrderItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;

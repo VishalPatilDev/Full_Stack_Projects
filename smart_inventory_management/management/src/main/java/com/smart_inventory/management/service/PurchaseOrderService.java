@@ -90,6 +90,7 @@ public class PurchaseOrderService {
         order.setOrderDate(LocalDate.now());
         order.setSupplier(supplier);
         order.setCreatedBy(currentUser);
+        order.setWarehouse(warehouse);
         order.setPurchaseOrderItems(new ArrayList<>());
 
         // ── Step 2: Build each line item ──────────────────────────────────────
@@ -101,7 +102,8 @@ public class PurchaseOrderService {
             item.setPurchaseOrder(order);
             item.setProduct(product);
             item.setQuantity(itemDto.getQuantity());
-            item.setPrice(itemDto.getPrice());
+            // Use product's current purchase price at time of purchase
+            item.setPrice(product.getPurchasePrice());
             order.getPurchaseOrderItems().add(item);
 
             // ── Step 3: Increase inventory ────────────────────────────────────

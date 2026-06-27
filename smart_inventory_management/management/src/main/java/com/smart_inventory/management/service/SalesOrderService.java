@@ -98,6 +98,7 @@ public class SalesOrderService {
         SalesOrder order = new SalesOrder();
         order.setOrderDate(LocalDate.now());
         order.setCreatedBy(currentUser);
+        order.setWarehouse(warehouse);
         order.setSalesOrderItems(new ArrayList<>());
 
         dto.getItems().forEach(itemDto -> {
