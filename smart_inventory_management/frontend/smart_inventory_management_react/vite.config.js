@@ -6,13 +6,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    // proxy only needed locally — remove for production build
     // Proxy API calls to Spring Boot — avoids CORS issues in dev
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:8080',
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/api/, '')
+    //   }
+    // }
   }
 })
